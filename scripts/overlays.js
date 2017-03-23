@@ -16,7 +16,6 @@ function overlayNames() {
 }
 
 function addOverlay() {
-	event.preventDefault();
 	var overlay = overlays[0];
 	
 	var string = "<div id=\"overlay" + overlayId + "\" data-role=\"collapsible\" data-collapsed-icon=\"carat-d\" data-expanded-icon=\"carat-u\" data-collapsed=\"false\">" +
