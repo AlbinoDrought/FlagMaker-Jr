@@ -66,3 +66,15 @@
 #overlays {
 	overflow-y: scroll;
 }
+
+footer {
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	max-width: 100%;
+	opacity: 0.5;
+}
+
+footer:hover {
+	opacity: 1;
+}
