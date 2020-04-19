@@ -4,6 +4,23 @@ var overlayId = 0;
 function loadOverlays() {
 	loadOverlaysBasic();
 	loadOverlaysPath();
+
+	var indicesToFloatToTop = [];
+
+	for (var i = 0; i < overlays.length; i += 1) {
+		var overlay = overlays[i];
+		if (overlay.special) {
+			indicesToFloatToTop.push(i);
+		}
+	}
+
+	for (var i = 0; i < indicesToFloatToTop.length; i += 1) {
+		var indexToFloatToTop = indicesToFloatToTop[i];
+		var item = overlays[indexToFloatToTop];
+
+		overlays.splice(indexToFloatToTop, 1);
+		overlays.splice(0, 0, item);
+	}
 }
 
 function overlayNames() {
