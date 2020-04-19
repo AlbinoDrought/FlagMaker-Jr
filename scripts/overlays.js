@@ -53,7 +53,7 @@ function addOverlay() {
 	
 	// Apply jQuery mobile styles to dynamic controls
 	makePalette($("#ovcol-" + overlayId));
-	$("#ovcol-" + overlayId).spectrum("set", colors[10]);
+	$("#ovcol-" + overlayId).spectrum("set", seanColors[3]);
 	$("#overlay" + overlayId).collapsible();
 	$("#overlay" + overlayId).trigger("create");
 	
