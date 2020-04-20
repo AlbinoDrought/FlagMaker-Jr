@@ -94,7 +94,7 @@ function getSliderString(overlay, id) {
 		var useX = overlay.sliders[i][1];
 		
 		string += "<label for=\"slider-" + name + "-" + i + "\">" + label + "</label>" +
-		          "<input type=\"range\" name=\"" + name + "\" id=\"" + name + "\" data-highlight=\"true\" min=\"0\" max=\"" + (useX ? maxX : maxY) + "\" value=\"" + overlay.sliders[i][2] + "\" step=\".1\" ";
+		          "<input type=\"range\" name=\"" + name + "\" id=\"" + name + "\" data-highlight=\"true\" min=\"" + (useX ? -maxX : -maxY) +  "\" max=\"" + (useX ? maxX : maxY) + "\" value=\"" + overlay.sliders[i][2] + "\" step=\".1\" ";
 		if (useX) {
 			string += "use-x ";
 		} else {
