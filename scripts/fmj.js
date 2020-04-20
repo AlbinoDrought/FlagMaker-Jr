@@ -2,11 +2,17 @@ var division = "grid";
 var maxX, maxY;
 var colors = ['rgb(93, 53, 39);', 'rgb(130, 36, 51);', 'rgb(198, 12, 48);', 'rgb(255, 99, 25);', 'rgb(253, 200, 47);','rgb(254, 221, 0);', 'rgb(51, 115, 33);', 'rgb(20, 77, 41);', 'rgb(40, 78, 54);', 'rgb(99, 153, 171);', 'rgb(0, 101, 189);', 'rgb(0, 57, 166);', 'rgb(0, 38, 100);', 'rgb(0, 33, 71);', 'rgb(0, 0, 0);', 'rgb(141, 129, 123);', 'rgb(255, 255, 255);'];
 var seanColors = [
-	'rgb(16, 128, 66);', // green
-	'rgb(255, 255, 255);', // white
 	'rgb(255, 42, 42);', // red
+	'rgb(255, 255, 255);', // white
+	'rgb(16, 128, 66);', // green
 	'rgb(255, 140, 0);', // orange
+	'rgb(0, 0, 0);', // black
 ];
+
+var flagColorOne = seanColors[0];
+var flagColorTwo = seanColors[1];
+var flagColorThree = seanColors[2];
+var defaultOverlayColor = seanColors[4];
 
 $(document).ready(function() {
 	loadOverlays();
@@ -59,17 +65,23 @@ $(window).resize(function() {
 });
 
 function newFlag() {
-	$("#div1col").spectrum("set", seanColors[0]);
-	$("#div2col").spectrum("set", seanColors[1]);
-	$("#div3col").spectrum("set", seanColors[2]);
+	$("#div1col").spectrum("set", flagColorOne);
+	$("#div2col").spectrum("set", flagColorTwo);
+	$("#div3col").spectrum("set", flagColorThree);
 	$("#div1val").val(2);
-	$("#div2val").val(2);
+	$("#div2val").val(3);
 	$("#div3val").val(2);
 	$("#overlays").empty();
-	division = "grid";
+	division = "pales";
 	maxX = 3;
 	maxY = 2;
 	setRatio(3, 2);
+	
+	addOverlay();
+	$("#slider-" + (overlayId-1) + "-0").val('0.21');
+	$("#slider-" + (overlayId-1) + "-1").val('0.34');
+	$("#slider-" + (overlayId-1) + "-2").val('0.84');
+	draw();
 }
 
 function setRatio(x, y) {
